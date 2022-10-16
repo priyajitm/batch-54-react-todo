@@ -19,6 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 50px;
 }
 
 .add-task {
@@ -67,4 +68,21 @@ body {
 
 .task p {
   flex: 2
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+.task-header {
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 700;
+  background-color: bisque;
+}
+
+
+.task input {
+  flex: 2;
+  padding: 5px;
 }
