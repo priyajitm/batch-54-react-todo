@@ -32,7 +32,7 @@ const TaskContainer = ({
       <p className="task-header">{title}</p>
 
       {tasksList.map((task) => {
-        if (showEdit && task.id == taskID) {
+        if (showEdit && task.taskid == taskID) {
           return (
             <div className="task">
               <input
@@ -45,7 +45,7 @@ const TaskContainer = ({
           );
         } else {
           return (
-            <div className="task" key={task.id}>
+            <div className="task" key={task.taskid}>
               <p className={task.completed ? "strike-through" : undefined}>
                 {task.title}
               </p>
@@ -53,22 +53,22 @@ const TaskContainer = ({
                 <>
                   <i
                     className="fa-regular fa-circle-check"
-                    onClick={() => doneTask(task.id)}
+                    onClick={() => doneTask(task.taskid, true)}
                   ></i>
                   <i
                     className="fa-solid fa-pen-to-square"
-                    onClick={() => handleEdit(task.title, task.id)}
+                    onClick={() => handleEdit(task.title, task.taskid)}
                   ></i>
                 </>
               ) : (
                 <>
                   <i
                     className="fa-solid fa-rotate-right"
-                    onClick={() => undoTask(task.id)}
+                    onClick={() => undoTask(task.taskid, false)}
                   ></i>
                   <i
                     className="fa-solid fa-trash"
-                    onClick={() => deleteTask(task.id)}
+                    onClick={() => deleteTask(task.taskid)}
                   ></i>
                 </>
               )}
